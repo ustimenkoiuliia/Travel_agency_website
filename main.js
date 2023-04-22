@@ -64,7 +64,7 @@ requiredInputs.forEach(item => item.addEventListener('blur', function () {
 let hotelItems = document.querySelectorAll('.hotel-item');
 
 hotelItems.forEach((item) => {
-  let mapBtns = item.querySelectorAll('.map a');
+  let mapBtns = item.querySelectorAll('.map-btn');
   let popups = item.querySelectorAll('.popup');
   
   mapBtns.forEach((btn, index) => {
