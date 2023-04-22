@@ -61,6 +61,29 @@ requiredInputs.forEach(item => item.addEventListener('blur', function () {
 
 // Iframe
 
+let hotelItems = document.querySelectorAll('.hotel-item');
+
+hotelItems.forEach((item) => {
+  let mapBtns = item.querySelectorAll('.map a');
+  let popups = item.querySelectorAll('.popup');
+  
+  mapBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popups.forEach((popup) => {
+        popup.style.display = 'none';
+      });
+      popups[index].style.display = 'block';
+    });
+  });
+  
+  popups.forEach((popup) => {
+    popup.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  });
+});
+
 // let addresses =[
 //   "https://www.google.com/maps/place/Gran+Hotel+Bah%C3%ADa+del+Duque+Resort/@28.0938527,-16.7441285,17z/data=!3m1!4b1!4m9!3m8!1s0xc6a974b7638d775:0xb14b6b62c3ebf966!5m2!4m1!1i2!8m2!3d28.0938527!4d-16.7419398!16s%2Fg%2F11bc5tlpbr",
 //   "https://www.google.com/maps/place/Maxx+Royal+Belek+Golf+Resort/@36.848712,31.0683981,17z/data=!3m1!4b1!4m9!3m8!1s0x14c37b45be7570bd:0x459f8f3bdf73e4b5!5m2!4m1!1i2!8m2!3d36.848712!4d31.0705868!16s%2Fg%2F1v5wdc77?coh=178572&entry=tt&shorturl=1",
@@ -68,19 +91,8 @@ requiredInputs.forEach(item => item.addEventListener('blur', function () {
 //   "https://www.google.com/maps/place/Gran+Hotel+Bah%C3%ADa+del+Duque+Resort/@28.0938527,-16.7419398,17z/data=!3m1!4b1!4m9!3m8!1s0xc6a974b7638d775:0xb14b6b62c3ebf966!5m2!4m1!1i2!8m2!3d28.0938527!4d-16.7419398!16s%2Fg%2F11bc5tlpbr",
 // ];
 
-let mapBtns = document.querySelectorAll('.map a')
-const popup = document.querySelector('.popup');
-// let container = document.querySelector('.hotels-container')
+// let mapBtns = document.querySelectorAll('.map a')
 
-mapBtns.forEach(btn => btn.addEventListener('click', function (e) {
-  e.preventDefault()
-  popup.style.display = 'block';
-
-}))
-
-popup.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
 
 // function createIframe(e){
 //   let containers = document.querySelectorAll('.hotel-item')
