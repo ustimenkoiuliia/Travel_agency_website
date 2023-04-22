@@ -1,0 +1,455 @@
+*{
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto;
+  background-color: #e1dfdf;
+}
+
+
+/* Header */
+
+
+header{
+  grid-column: 1/4;
+  grid-row: 1/1;
+  background: url(img/ch-rnye-oboi-s-prosvetom-dlya-rabochego-stola.jpg);
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 1000;
+}
+
+.header-content{
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+
+.header-item{
+  width: 25%;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.header-item:nth-child(2),
+.header-item:nth-child(3){
+  border-right: 1px solid rgb(119,108,69);
+}
+.logo img{
+  width: 200px;
+  height: auto;
+}
+
+.tel{
+  color: #fff;
+  font-weight: bold;
+}
+
+.email h3{
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.email p{
+  color: rgb(192,171,116);
+  font-style: italic;
+}
+
+.email a{
+  text-decoration: none;
+  color: rgb(192,171,116);
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.media a{
+  color: rgb(119,108,69);
+  font-style: italic;
+  cursor: pointer;
+}
+
+.media-bar{
+  display: flex;
+  background-color: rgb(192,171,116);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.media-icons{
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+/* Nav */
+
+nav{
+  background-color: rgb(192,171,116);
+  grid-column: 1/4;
+  grid-row: 2/2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0 ;
+ position: fixed;
+ top: 100px;
+ left: 0;
+ right: 0;
+ z-index: 999;
+}
+
+nav a{
+  text-decoration: none;
+  color: rgb(119,108,69);
+  font-size: 1.2em;
+  cursor: pointer;
+  }
+
+  nav a:hover{
+    color: #fff;
+  }
+
+  /* Main slider */
+
+.main-slider{
+  margin-top: 138px;
+  grid-column: 1/4;
+  grid-row: 3/3;
+  background: url(img/gallery/1fix.jpg) 0 0/100% auto no-repeat;
+}
+
+
+.gallery{
+  width: 78vw;
+  height: 30vw;
+  display: flex;
+  margin: 0 auto;
+  align-items: end;
+  justify-content: center;
+  padding: 30px;
+}
+
+.gallery-item{
+  position: relative;
+  width: 120px;
+  height: 70px;
+  border: 2px solid #000;
+}
+
+.gallery-item img{
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item:hover{
+  cursor: pointer;
+
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #000;
+}
+
+.cover:hover{
+  opacity: 0.5;
+}
+
+/* Aside */
+
+.destinations{
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.dest-container{
+  width: 75%;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: -1px 2px 7px 2px rgba(0,0,0,0.38);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dest-title{
+  background-color: rgb(192,171,116);
+  padding: 10px;
+ color: #fff;
+}
+
+.country{
+  margin: 10px 10px 0 10px;
+  position: relative;
+ 
+}
+
+.country img{
+  width: 100%;
+  filter: brightness(50%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.country:hover img {
+  filter: brightness(30%);
+}
+
+.country-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 1;
+  font-style: italic;
+  text-align: center;
+ 
+}
+.desc-cover_title{
+  font-size: 16px;
+}
+
+.desc-cover_title::after{
+  content: '';
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: rgb(192,171,116);
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  box-shadow:-1px 2px 7px 2px rgba(0,0,0,0.38);
+}
+
+.desc-cover_price{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.dest-btn{
+ background-color: #fff;
+ border: 1px solid rgb(192,171,116);
+ color: rgb(192,171,116);
+ padding: 10px;
+ margin: 10px;
+ cursor: pointer;
+ font-style: italic;
+ font-size: 1.2em;
+}
+
+.dest-btn:hover{
+  border: 2px solid rgb(192,171,116);
+}
+
+/* Hotels */
+
+.hotels{
+
+ grid-column: 2/3;
+ grid-row: 4/5;
+
+}
+
+.hotels-title{
+  font-size: 1.5em;
+  color: rgb(192,171,116);
+  margin: 20px;
+}
+
+.hotels-container{
+  background-color: #fff;
+ display: flex;
+ flex-direction: column;
+
+}
+
+.hotel-item{
+  min-height: 200px;
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+
+.hotel-photo{
+  width: 50%;
+}
+
+.hotel-photo img{
+  width: 100%;
+}
+
+.hotel-info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-title{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.hotel-desc{
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.hotel-details{
+  display: flex;
+
+}
+
+.hotel-price{
+  width: 50%;
+  padding: 10px;
+  background-color: rgb(192,171,116);
+  color: #fff;
+  text-align: center;
+}
+
+.map{
+  width: 50%;
+  padding: 10px;
+  border: 1px solid rgb(192,171,116);
+text-align: center;
+}
+
+.map a{
+  text-decoration: none;
+  color: rgb(192,171,116);
+  cursor: pointer;
+}
+.ad{
+  grid-column: 3/4;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+}
+
+.spo{
+  width: 75%;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: -1px 2px 7px 2px rgba(0,0,0,0.38);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.spo:hover{
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
+.spo-top{
+  height: 15%;
+  background-color: rgb(192,171,116);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.spo-img{
+  padding: 10px;
+}
+
+.spo-img img{
+  width: 100%;
+}
+
+.subscribe{
+  width: 75%;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: -1px 2px 7px 2px rgba(0,0,0,0.38);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.subscribe h2{
+  background-color: rgb(192,171,116);
+  padding: 10px;
+  color: #fff;
+}
+
+.sub-form{
+  padding: 20px 10px;
+}
+
+
+input{
+  width: 100%;
+margin-bottom: 20px;
+line-height: 2em;
+}
+
+select{
+  width: 100%;
+  height: 2em;
+  margin-bottom: 20px;
+}
+
+form p{
+  display: none;
+  color: red;
+  margin-bottom: 5px;
+}
+
+.submit-btn{
+  padding: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.error{
+  border: 1px solid red;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+.popup iframe {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer{
+  background-color: violet;
+  grid-column: 1/4;
+  grid-row: 5/6;
+}
+
+
+
